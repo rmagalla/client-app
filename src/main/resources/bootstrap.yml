@@ -1,0 +1,21 @@
+info:
+  component: client-app
+spring:
+  application:
+    name: client-app
+  profiles:
+    active: ${env}
+server:
+  port: 0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+encrypt:
+  key: abcdefg
+management:
+  security:
+    enabled: false
